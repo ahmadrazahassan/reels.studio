@@ -7,8 +7,8 @@ import Link from 'next/link'
 export default function Footer() {
   return (
     <footer className="relative mt-24 sm:mt-32">
-      {/* Main Footer - Black Background with Rounded Top */}
-      <div className="bg-black text-white rounded-t-[48px] sm:rounded-t-[64px]">
+      {/* Main Footer - Dark Background with Rounded Top */}
+      <div className="bg-dark-deep text-light rounded-t-[48px] sm:rounded-t-[64px]">
         <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 py-16 sm:py-20 lg:py-24">
           {/* Large Brand Statement */}
           <motion.div
@@ -108,7 +108,7 @@ export default function Footer() {
               </h4>
               <a
                 href="#download"
-                className="inline-flex items-center gap-2 bg-primary text-black font-display font-bold text-sm px-6 py-3 rounded-full hover:scale-105 transition-transform"
+                className="inline-flex items-center gap-2 bg-primary text-dark-deep font-display font-bold text-sm px-6 py-3 rounded-full hover:scale-105 hover:shadow-[0_0_20px_rgba(140,255,46,0.4)] transition-all duration-200"
               >
                 Try Now
                 <ArrowUpRight className="w-4 h-4" />

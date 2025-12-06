@@ -220,7 +220,7 @@ export default function DownloadForm() {
       <form onSubmit={handleSubmit} className="space-y-4" suppressHydrationWarning>
         {/* URL Input with Modern Design */}
         <div className="relative group" suppressHydrationWarning>
-          <div className="absolute left-5 top-1/2 -translate-y-1/2 text-black/40 group-focus-within:text-black transition-colors">
+          <div className="absolute left-5 top-1/2 -translate-y-1/2 text-dark/40 group-focus-within:text-dark-deep transition-colors">
             <LinkIcon className="w-5 h-5" />
           </div>
           <input
@@ -229,7 +229,7 @@ export default function DownloadForm() {
             value={url}
             onChange={(e) => setUrl(e.target.value)}
             placeholder="instagram.com/reel/... (Ctrl+V to paste)"
-            className="w-full pl-14 pr-24 py-5 rounded-[20px] bg-cream-50 border-2 border-black/5 focus:border-black focus:bg-white focus:outline-none transition-all duration-200 font-display font-medium text-base placeholder:text-black/30 placeholder:font-light"
+            className="w-full pl-14 pr-24 py-5 rounded-[20px] bg-light-gray border-2 border-dark/5 focus:border-primary focus:bg-light focus:outline-none transition-all duration-200 font-display font-medium text-base text-dark-deep placeholder:text-dark/30 placeholder:font-light shadow-soft"
             disabled={isLoading}
             suppressHydrationWarning
           />
@@ -237,21 +237,21 @@ export default function DownloadForm() {
           <button
             type="button"
             onClick={handlePasteFromClipboard}
-            className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-[12px] bg-black/5 hover:bg-black/10 transition-colors"
+            className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-[12px] bg-dark/5 hover:bg-dark/10 transition-colors"
             disabled={isLoading}
             title="Paste from clipboard"
           >
-            <Copy className="w-4 h-4 text-black/60" />
+            <Copy className="w-4 h-4 text-dark/60" />
           </button>
           {/* Animated Border Effect */}
-          <div className="absolute inset-0 rounded-[20px] border-2 border-primary opacity-0 group-focus-within:opacity-100 transition-opacity pointer-events-none" />
+          <div className="absolute inset-0 rounded-[20px] border-2 border-primary opacity-0 group-focus-within:opacity-100 transition-opacity pointer-events-none shadow-[0_0_20px_rgba(140,255,46,0.3)]" />
         </div>
 
         {/* Progress Bar */}
         {isLoading && downloadProgress > 0 && (
-          <div className="w-full h-1 bg-black/5 rounded-full overflow-hidden">
+          <div className="w-full h-1 bg-dark/5 rounded-full overflow-hidden">
             <motion.div
-              className="h-full bg-primary"
+              className="h-full bg-primary shadow-[0_0_10px_rgba(140,255,46,0.5)]"
               initial={{ width: 0 }}
               animate={{ width: `${downloadProgress}%` }}
               transition={{ duration: 0.3 }}
@@ -263,9 +263,9 @@ export default function DownloadForm() {
         <motion.button
           type="submit"
           disabled={isLoading || !url}
-          className="relative w-full bg-black text-primary font-display font-bold text-base py-5 rounded-[20px] overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed group"
-          whileHover={{ scale: isLoading || !url ? 1 : 1.01 }}
-          whileTap={{ scale: isLoading || !url ? 1 : 0.99 }}
+          className="relative w-full bg-dark-deep text-primary font-display font-bold text-base py-5 rounded-[20px] overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed group shadow-soft hover:shadow-soft-md"
+          whileHover={{ scale: isLoading || !url ? 1 : 1.02 }}
+          whileTap={{ scale: isLoading || !url ? 1 : 0.98 }}
         >
           {/* Hover Effect Background */}
           <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-10 transition-opacity" />

@@ -27,7 +27,7 @@ A modern, sophisticated SAAS website for downloading Instagram Reels instantly. 
 This website follows a comprehensive design system with:
 
 - **Sophisticated Minimalism**: Clean, modern aesthetics
-- **Lime Yellow Accent** (#cafc4f): Energetic and modern
+- **Vibrant Green Accent** (#8cff2e): Energetic and modern
 - **Cream Backgrounds**: Warm, reduced eye strain
 - **Typography**: Montserrat Alternates for display, system fonts for body
 - **Micro-interactions**: Delightful hover effects and animations
@@ -121,7 +121,7 @@ The `/api/download/route.ts` endpoint is currently a mock. To implement actual I
 Edit `tailwind.config.ts` to change the primary accent color:
 ```typescript
 colors: {
-  primary: '#cafc4f', // Change this
+  primary: '#8cff2e', // Vibrant green accent
 }
 ```
 

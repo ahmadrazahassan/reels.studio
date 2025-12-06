@@ -38,15 +38,15 @@ export default function Header() {
         animate={{ opacity: isVisible ? 1 : 0 }}
         transition={{ duration: 0.3 }}
       >
-        <div className="max-w-4xl mx-auto bg-cream-50 border border-black/10 rounded-[24px] shadow-sm backdrop-blur-sm pointer-events-auto">
+        <div className="max-w-4xl mx-auto bg-light/95 border border-dark/10 rounded-[24px] shadow-soft backdrop-blur-md pointer-events-auto">
           <div className="flex items-center justify-between px-6 py-4">
             {/* Logo - Left */}
             <Link
               href="/"
               className="font-display tracking-tight hover:opacity-70 transition-opacity duration-300"
             >
-              <span className="font-light text-black text-lg">reels</span>
-              <span className="font-bold text-black text-lg">.studio</span>
+              <span className="font-light text-dark-deep text-lg">reels</span>
+              <span className="font-bold text-dark-deep text-lg">.studio</span>
             </Link>
 
             {/* Center Navigation - Desktop */}
@@ -55,7 +55,7 @@ export default function Header() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="px-4 py-2 text-sm font-display font-medium text-black/60 hover:text-black transition-all duration-200 lowercase rounded-xl hover:bg-black/5"
+                  className="px-4 py-2 text-sm font-display font-medium text-dark/60 hover:text-dark-deep transition-all duration-200 lowercase rounded-xl hover:bg-dark/5"
                 >
                   {link.name}
                 </Link>
@@ -67,7 +67,7 @@ export default function Header() {
               {/* Desktop CTA */}
               <a
                 href="#download"
-                className="hidden sm:flex items-center gap-1.5 bg-black text-primary font-display font-bold text-sm px-5 py-2 rounded-full hover:bg-black/90 transition-all duration-200 lowercase"
+                className="hidden sm:flex items-center gap-1.5 bg-dark-deep text-primary font-display font-bold text-sm px-5 py-2 rounded-full hover:bg-dark hover:scale-105 transition-all duration-200 lowercase shadow-soft"
               >
                 download
                 <ArrowUpRight className="w-3.5 h-3.5" />
@@ -80,7 +80,7 @@ export default function Header() {
                 aria-label="Toggle menu"
               >
                 <motion.span
-                  className="w-4 h-px bg-black"
+                  className="w-4 h-px bg-dark-deep"
                   animate={{
                     rotate: isMobileMenuOpen ? 45 : 0,
                     y: isMobileMenuOpen ? 2.5 : 0,
@@ -88,14 +88,14 @@ export default function Header() {
                   transition={{ duration: 0.2 }}
                 />
                 <motion.span
-                  className="w-4 h-px bg-black my-1"
+                  className="w-4 h-px bg-dark-deep my-1"
                   animate={{
                     opacity: isMobileMenuOpen ? 0 : 1,
                   }}
                   transition={{ duration: 0.2 }}
                 />
                 <motion.span
-                  className="w-4 h-px bg-black"
+                  className="w-4 h-px bg-dark-deep"
                   animate={{
                     rotate: isMobileMenuOpen ? -45 : 0,
                     y: isMobileMenuOpen ? -2.5 : 0,
@@ -120,13 +120,13 @@ export default function Header() {
           >
             {/* Backdrop */}
             <motion.div
-              className="absolute inset-0 bg-black/20 backdrop-blur-sm"
+              className="absolute inset-0 bg-dark-deep/20 backdrop-blur-sm"
               onClick={() => setIsMobileMenuOpen(false)}
             />
 
             {/* Menu Panel */}
             <motion.div
-              className="absolute top-20 left-4 right-4 bg-cream-50 rounded-2xl shadow-lg border border-black/10"
+              className="absolute top-20 left-4 right-4 bg-light rounded-2xl shadow-soft-lg border border-dark/10"
               initial={{ opacity: 0, y: -20, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -20, scale: 0.95 }}
@@ -138,7 +138,7 @@ export default function Header() {
                     <Link
                       key={link.name}
                       href={link.href}
-                      className="block px-4 py-2.5 font-display font-medium text-base text-black/70 hover:text-black hover:bg-black/5 rounded-xl transition-all duration-200 lowercase"
+                      className="block px-4 py-2.5 font-display font-medium text-base text-dark/70 hover:text-dark-deep hover:bg-dark/5 rounded-xl transition-all duration-200 lowercase"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {link.name}
@@ -148,7 +148,7 @@ export default function Header() {
 
                 <a
                   href="#download"
-                  className="flex items-center justify-center gap-2 bg-black text-primary font-display font-bold text-sm px-5 py-2.5 rounded-full hover:bg-black/90 transition-colors w-full lowercase"
+                  className="flex items-center justify-center gap-2 bg-dark-deep text-primary font-display font-bold text-sm px-5 py-2.5 rounded-full hover:bg-dark hover:scale-105 transition-all duration-200 w-full lowercase shadow-soft"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   download now

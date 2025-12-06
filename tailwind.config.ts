@@ -9,7 +9,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: '#cafc4f',
+        primary: '#8cff2e',
+        dark: {
+          DEFAULT: '#2f2f2f',
+          deep: '#111',
+        },
+        light: {
+          DEFAULT: '#fff',
+          gray: '#f8f8f8',
+        },
         cream: {
           50: '#fdfbf7',
           100: '#f9f4e8',

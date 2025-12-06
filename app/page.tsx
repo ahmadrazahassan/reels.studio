@@ -66,7 +66,7 @@ export default function Home() {
     <div className="overflow-hidden">
       {/* Hero Section */}
       <section id="download" className="relative pt-24 pb-12 sm:pt-28 sm:pb-16">
-        {/* Large Lime Yellow Rounded Background */}
+        {/* Large Vibrant Green Rounded Background */}
         <div className="absolute top-0 left-0 right-0 bottom-0 mx-4 sm:mx-6 lg:mx-8 bg-primary rounded-[48px] sm:rounded-[64px] lg:rounded-[80px]" />
         
         <div className="relative max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 py-8 sm:py-12 lg:py-16">
@@ -78,39 +78,39 @@ export default function Home() {
               transition={{ duration: 0.7 }}
             >
               <motion.div
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/10 border border-black/10 mb-6"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-dark-deep/10 border border-dark-deep/10 mb-6"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.2 }}
               >
-                <div className="w-1.5 h-1.5 bg-black rounded-full" />
-                <span className="text-xs font-display font-semibold text-black/80 uppercase tracking-wide">Free • No Watermarks</span>
+                <div className="w-1.5 h-1.5 bg-dark-deep rounded-full animate-pulse" />
+                <span className="text-xs font-display font-semibold text-dark-deep/80 uppercase tracking-wide">Free • No Watermarks</span>
               </motion.div>
 
-              <h1 className="font-display font-light text-5xl sm:text-6xl lg:text-7xl tracking-tight mb-5 leading-[1.1] text-black">
+              <h1 className="font-display font-light text-5xl sm:text-6xl lg:text-7xl tracking-tight mb-5 leading-[1.1] text-dark-deep">
                 Download
                 <br />
                 <span className="font-extrabold">Instagram Reels</span>
               </h1>
               
-              <p className="text-lg sm:text-xl text-black/70 max-w-lg mb-8 leading-relaxed">
+              <p className="text-lg sm:text-xl text-dark/70 max-w-lg mb-8 leading-relaxed">
                 Save your favorite Reels in HD quality. Fast, secure, and completely free forever.
               </p>
 
               {/* Trust Indicators */}
-              <div className="flex flex-wrap items-center gap-6 text-black/60">
+              <div className="flex flex-wrap items-center gap-6 text-dark/60">
                 <div className="flex items-center gap-2">
-                  <span className="font-display font-bold text-xl text-black">50K+</span>
+                  <span className="font-display font-bold text-xl text-dark-deep">50K+</span>
                   <span className="font-display font-medium text-sm">Downloads</span>
                 </div>
-                <div className="w-px h-5 bg-black/20" />
+                <div className="w-px h-5 bg-dark/20" />
                 <div className="flex items-center gap-2">
-                  <span className="font-display font-bold text-xl text-black">100%</span>
+                  <span className="font-display font-bold text-xl text-dark-deep">100%</span>
                   <span className="font-display font-medium text-sm">Secure</span>
                 </div>
-                <div className="w-px h-5 bg-black/20" />
+                <div className="w-px h-5 bg-dark/20" />
                 <div className="flex items-center gap-2">
-                  <span className="font-display font-bold text-xl text-black">Instant</span>
+                  <span className="font-display font-bold text-xl text-dark-deep">Instant</span>
                   <span className="font-display font-medium text-sm">Processing</span>
                 </div>
               </div>
@@ -123,7 +123,7 @@ export default function Home() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3, duration: 0.7 }}
             >
-              <div className="relative bg-white rounded-[32px] p-8 shadow-lg" suppressHydrationWarning>
+              <div className="relative bg-light rounded-[32px] p-8 shadow-soft-lg border border-dark/5" suppressHydrationWarning>
                 <DownloadForm />
               </div>
             </motion.div>
@@ -259,7 +259,7 @@ export default function Home() {
       {/* How It Works Section - Ultra Modern Staggered Layout */}
       <section className="py-12 sm:py-16 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
-          {/* Large Lime Yellow Rounded Background Container */}
+          {/* Large Vibrant Green Rounded Background Container */}
           <div className="relative">
             <div className="absolute inset-0 bg-primary rounded-[48px] sm:rounded-[64px]" />
             

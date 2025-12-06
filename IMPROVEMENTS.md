@@ -121,7 +121,7 @@
 
 ## 🎨 Design Consistency
 All improvements maintain the existing design system:
-- Lime yellow (#CDFF00) primary color
+- Vibrant green (#8cff2e) primary color
 - Black and cream color scheme
 - Rounded corners (20px-32px)
 - Modern typography
