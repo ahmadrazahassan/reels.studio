@@ -1,0 +1,16 @@
+{
+  "name": "reels.studio - Instagram Reels Downloader",
+  "short_name": "reels.studio",
+  "description": "Download Instagram Reels without watermarks. Fast, free, and easy to use.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F5F1E8",
+  "theme_color": "#CDFF00",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
