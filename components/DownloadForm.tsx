@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowDown, Loader2, Check, AlertCircle, Link as LinkIcon, Download, Copy } from 'lucide-react'
+import { ArrowDown, Loader2, Check, AlertCircle, Link as LinkIcon, Download, Copy, Clipboard, CheckCircle, Image } from 'lucide-react'
 import toast from 'react-hot-toast'
 import type { VideoData } from '@/types'
 
@@ -28,7 +28,7 @@ export default function DownloadForm() {
             if (text.includes('instagram.com')) {
               setUrl(text)
               toast.success('Instagram URL detected and pasted!', {
-                icon: '📋',
+                icon: <Clipboard className="w-5 h-5" />,
               })
             }
           }).catch(() => {
@@ -49,7 +49,7 @@ export default function DownloadForm() {
         const text = await navigator.clipboard.readText()
         if (text.includes('instagram.com') && !url) {
           toast('Instagram URL detected in clipboard!', {
-            icon: '📋',
+            icon: <Clipboard className="w-5 h-5" />,
             duration: 3000,
           })
         }
@@ -113,7 +113,7 @@ export default function DownloadForm() {
       
       toast.success('Video ready to download!', {
         id: loadingToast,
-        icon: '✅',
+        icon: <CheckCircle className="w-5 h-5" />,
       })
       setRetryCount(0)
     } catch (err) {
@@ -133,19 +133,32 @@ export default function DownloadForm() {
     handleSubmit(new Event('submit') as any)
   }
 
-  const handleDownload = async () => {
+  const handleDownload = async (type: 'video' | 'thumbnail' = 'video') => {
     if (!videoData) return
 
-    const downloadToast = toast.loading('Downloading video...')
+    const downloadToast = toast.loading(type === 'video' ? 'Downloading video...' : 'Downloading thumbnail...')
 
     try {
       setIsLoading(true)
       
-      // Fetch the video through our proxy
-      const response = await fetch(videoData.videoUrl)
+      const downloadUrl = type === 'video' ? videoData.videoUrl : videoData.thumbnail
+      const fileExtension = type === 'video' ? 'mp4' : 'jpg'
+      const filename = `${videoData.title.replace(/[^a-z0-9]/gi, '_').substring(0, 50)}_${type}.${fileExtension}`
+      
+      // Use our proxy API to download the file
+      const response = await fetch('/api/proxy-download', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          url: downloadUrl,
+          filename: filename,
+        }),
+      })
       
       if (!response.ok) {
-        throw new Error('Failed to fetch video')
+        throw new Error(`Failed to fetch ${type}`)
       }
 
       const blob = await response.blob()
@@ -154,7 +167,7 @@ export default function DownloadForm() {
       const blobUrl = window.URL.createObjectURL(blob)
       const link = document.createElement('a')
       link.href = blobUrl
-      link.download = `${videoData.title.replace(/[^a-z0-9]/gi, '_').substring(0, 50)}.mp4`
+      link.download = filename
       document.body.appendChild(link)
       link.click()
       document.body.removeChild(link)
@@ -162,15 +175,15 @@ export default function DownloadForm() {
       // Clean up the blob URL
       window.URL.revokeObjectURL(blobUrl)
       
-      toast.success('Video downloaded successfully!', {
+      toast.success(`${type === 'video' ? 'Video' : 'Thumbnail'} downloaded successfully!`, {
         id: downloadToast,
-        icon: '🎉',
+        icon: <Check className="w-5 h-5" />,
       })
       
       setIsLoading(false)
     } catch (err) {
       setIsLoading(false)
-      const errorMsg = 'Failed to download video. Please try again.'
+      const errorMsg = `Failed to download ${type}. Please try again.`
       setError(errorMsg)
       toast.error(errorMsg, {
         id: downloadToast,
@@ -286,7 +299,6 @@ export default function DownloadForm() {
             <div className="relative rounded-[24px] overflow-hidden bg-black border-2 border-black/10">
               <video
                 src={videoData.videoUrl}
-                poster={videoData.thumbnail}
                 controls
                 className="w-full max-h-[450px] object-contain"
                 preload="metadata"
@@ -297,29 +309,42 @@ export default function DownloadForm() {
 
             {/* Action Buttons */}
             <div className="space-y-3">
-              {/* Download Button */}
-              <motion.button
-                onClick={handleDownload}
-                disabled={isLoading}
-                className="relative w-full bg-primary text-black font-display font-bold px-5 py-5 rounded-[20px] overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed group"
-                whileHover={{ scale: isLoading ? 1 : 1.01 }}
-                whileTap={{ scale: isLoading ? 1 : 0.99 }}
-              >
-                <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-5 transition-opacity" />
-                <div className="relative flex items-center justify-center gap-2">
-                  {isLoading ? (
-                    <>
+              {/* Download Buttons Grid */}
+              <div className="grid grid-cols-2 gap-3">
+                {/* Download Video Button */}
+                <motion.button
+                  onClick={() => handleDownload('video')}
+                  disabled={isLoading}
+                  className="relative bg-primary text-black font-display font-bold px-4 py-4 rounded-[20px] overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed group"
+                  whileHover={{ scale: isLoading ? 1 : 1.02 }}
+                  whileTap={{ scale: isLoading ? 1 : 0.98 }}
+                >
+                  <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-5 transition-opacity" />
+                  <div className="relative flex flex-col items-center justify-center gap-2">
+                    {isLoading ? (
                       <Loader2 className="w-5 h-5 animate-spin" />
-                      <span>Downloading</span>
-                    </>
-                  ) : (
-                    <>
+                    ) : (
                       <Download className="w-5 h-5" />
-                      <span>Download Video</span>
-                    </>
-                  )}
-                </div>
-              </motion.button>
+                    )}
+                    <span className="text-sm">Video</span>
+                  </div>
+                </motion.button>
+
+                {/* Download Thumbnail Button */}
+                <motion.button
+                  onClick={() => handleDownload('thumbnail')}
+                  disabled={isLoading || !videoData.thumbnail}
+                  className="relative bg-black text-primary font-display font-bold px-4 py-4 rounded-[20px] overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed group"
+                  whileHover={{ scale: isLoading ? 1 : 1.02 }}
+                  whileTap={{ scale: isLoading ? 1 : 0.98 }}
+                >
+                  <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-10 transition-opacity" />
+                  <div className="relative flex flex-col items-center justify-center gap-2">
+                    <Image className="w-5 h-5" />
+                    <span className="text-sm">Thumbnail</span>
+                  </div>
+                </motion.button>
+              </div>
 
               {/* Reset Button */}
               <button
