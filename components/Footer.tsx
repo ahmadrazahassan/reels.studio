@@ -168,6 +168,19 @@ export default function Footer() {
               </div>
             </div>
           </motion.div>
+
+          {/* Large Brand Statement - End of Footer */}
+          <motion.div
+            className="mt-16 pt-12 border-t border-white/5 overflow-hidden"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
+            <h3 className="font-bebas text-[14vw] sm:text-[12vw] lg:text-[10vw] leading-none tracking-wider text-white/20 text-center select-none pointer-events-none">
+              REELS.STUDIO
+            </h3>
+          </motion.div>
         </div>
       </div>
     </footer>

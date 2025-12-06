@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Montserrat_Alternates } from 'next/font/google'
+import { Montserrat_Alternates, Bebas_Neue } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -9,6 +9,13 @@ const montserrat = Montserrat_Alternates({
   subsets: ['latin'],
   weight: ['400', '600', '700', '800'],
   variable: '--font-montserrat',
+  display: 'swap',
+})
+
+const bebasNeue = Bebas_Neue({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-bebas',
   display: 'swap',
 })
 
@@ -79,7 +86,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={montserrat.variable}>
+    <html lang="en" className={`${montserrat.variable} ${bebasNeue.variable}`}>
       <body className="min-h-screen">
         <ToastProvider />
         <Header />

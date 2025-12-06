@@ -123,7 +123,7 @@ export default function Home() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3, duration: 0.7 }}
             >
-              <div className="relative bg-white rounded-[32px] p-8 shadow-lg">
+              <div className="relative bg-white rounded-[32px] p-8 shadow-lg" suppressHydrationWarning>
                 <DownloadForm />
               </div>
             </motion.div>

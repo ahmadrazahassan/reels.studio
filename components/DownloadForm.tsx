@@ -14,9 +14,17 @@ export default function DownloadForm() {
   const [error, setError] = useState('')
   const inputRef = useRef<HTMLInputElement>(null)
   const [retryCount, setRetryCount] = useState(0)
+  const [isMounted, setIsMounted] = useState(false)
+
+  // Set mounted state
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
 
   // Keyboard shortcut: Ctrl/Cmd + V to focus and paste
   useEffect(() => {
+    if (!isMounted) return
+
     const handleKeyDown = (e: KeyboardEvent) => {
       if ((e.ctrlKey || e.metaKey) && e.key === 'v') {
         if (document.activeElement !== inputRef.current) {
@@ -40,10 +48,12 @@ export default function DownloadForm() {
 
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [])
+  }, [isMounted])
 
   // Auto-detect clipboard content on mount
   useEffect(() => {
+    if (!isMounted) return
+
     const checkClipboard = async () => {
       try {
         const text = await navigator.clipboard.readText()
@@ -59,7 +69,7 @@ export default function DownloadForm() {
     }
     
     checkClipboard()
-  }, [])
+  }, [isMounted])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -206,10 +216,10 @@ export default function DownloadForm() {
   }
 
   return (
-    <div className="w-full">
-      <form onSubmit={handleSubmit} className="space-y-4">
+    <div className="w-full" suppressHydrationWarning>
+      <form onSubmit={handleSubmit} className="space-y-4" suppressHydrationWarning>
         {/* URL Input with Modern Design */}
-        <div className="relative group">
+        <div className="relative group" suppressHydrationWarning>
           <div className="absolute left-5 top-1/2 -translate-y-1/2 text-black/40 group-focus-within:text-black transition-colors">
             <LinkIcon className="w-5 h-5" />
           </div>
@@ -221,6 +231,7 @@ export default function DownloadForm() {
             placeholder="instagram.com/reel/... (Ctrl+V to paste)"
             className="w-full pl-14 pr-24 py-5 rounded-[20px] bg-cream-50 border-2 border-black/5 focus:border-black focus:bg-white focus:outline-none transition-all duration-200 font-display font-medium text-base placeholder:text-black/30 placeholder:font-light"
             disabled={isLoading}
+            suppressHydrationWarning
           />
           {/* Paste Button */}
           <button

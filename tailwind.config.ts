@@ -19,6 +19,7 @@ const config: Config = {
       },
       fontFamily: {
         display: ['var(--font-montserrat)', 'sans-serif'],
+        bebas: ['var(--font-bebas)', 'sans-serif'],
         body: ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Display', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'sans-serif'],
       },
       boxShadow: {
