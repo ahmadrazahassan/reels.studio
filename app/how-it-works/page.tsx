@@ -89,20 +89,20 @@ export default function HowItWorksPage() {
           transition={{ duration: 0.8 }}
         >
           <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/5 border border-black/10 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dark/5 border border-dark/10 mb-8"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
           >
-            <Check className="w-4 h-4" />
-            <span className="text-sm font-display font-semibold text-black/70">Simple Process</span>
+            <Check className="w-4 h-4 text-dark-deep" />
+            <span className="text-sm font-display font-semibold text-dark/70">Simple Process</span>
           </motion.div>
 
-          <h1 className="font-display font-light text-6xl sm:text-7xl lg:text-8xl tracking-tighter mb-6">
+          <h1 className="font-display font-light text-6xl sm:text-7xl lg:text-8xl tracking-tighter mb-6 text-dark-deep">
             How It <span className="font-extrabold">Works</span>
           </h1>
           
-          <p className="text-xl sm:text-2xl text-black/70 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl sm:text-2xl text-dark/70 max-w-3xl mx-auto leading-relaxed">
             Download Instagram Reels in 4 simple steps
           </p>
         </motion.div>
@@ -124,22 +124,22 @@ export default function HowItWorksPage() {
                 {/* Content */}
                 <div className="flex-1">
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center">
-                      <step.icon className="w-8 h-8 text-black" />
+                    <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center shadow-[0_0_20px_rgba(140,255,46,0.3)]">
+                      <step.icon className="w-8 h-8 text-dark-deep" />
                     </div>
                     <div className="text-7xl font-display font-extrabold text-primary/20">
                       {step.number}
                     </div>
                   </div>
                   
-                  <h2 className="font-display font-bold text-4xl mb-4">{step.title}</h2>
-                  <p className="text-xl text-black/70 mb-6 leading-relaxed">{step.description}</p>
+                  <h2 className="font-display font-bold text-4xl mb-4 text-dark-deep">{step.title}</h2>
+                  <p className="text-xl text-dark/70 mb-6 leading-relaxed">{step.description}</p>
                   
                   <ul className="space-y-3">
                     {step.details.map((detail, i) => (
                       <li key={i} className="flex items-start gap-3">
                         <Check className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                        <span className="text-black/60">{detail}</span>
+                        <span className="text-dark/60">{detail}</span>
                       </li>
                     ))}
                   </ul>
@@ -148,12 +148,12 @@ export default function HowItWorksPage() {
                 {/* Visual */}
                 <div className="flex-1">
                   <motion.div
-                    className="relative p-12 rounded-[48px] bg-white border border-black/10 shadow-soft-lg"
+                    className="relative p-12 rounded-[48px] bg-light border border-dark/10 shadow-soft-lg"
                     whileHover={{ scale: 1.02, y: -4 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="aspect-square rounded-3xl bg-cream-100 flex items-center justify-center">
-                      <step.icon className="w-24 h-24 text-black/20" />
+                    <div className="aspect-square rounded-3xl bg-light-gray flex items-center justify-center">
+                      <step.icon className="w-24 h-24 text-dark/20" />
                     </div>
                   </motion.div>
                 </div>
@@ -161,7 +161,7 @@ export default function HowItWorksPage() {
 
               {/* Connector Line */}
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute left-1/2 -translate-x-1/2 top-full h-12 w-px bg-black/10 mt-12" />
+                <div className="hidden lg:block absolute left-1/2 -translate-x-1/2 top-full h-12 w-px bg-dark/10 mt-12" />
               )}
             </motion.div>
           ))}
@@ -176,10 +176,10 @@ export default function HowItWorksPage() {
           transition={{ duration: 0.6 }}
         >
           <div className="text-center mb-16">
-            <h2 className="font-display font-light text-5xl sm:text-6xl lg:text-7xl tracking-tight mb-6">
+            <h2 className="font-display font-light text-5xl sm:text-6xl lg:text-7xl tracking-tight mb-6 text-dark-deep">
               Frequently Asked <span className="font-extrabold">Questions</span>
             </h2>
-            <p className="text-xl text-black/70 max-w-2xl mx-auto">
+            <p className="text-xl text-dark/70 max-w-2xl mx-auto">
               Everything you need to know about ReelSnap
             </p>
           </div>
@@ -188,14 +188,14 @@ export default function HowItWorksPage() {
             {faqs.map((faq, index) => (
               <motion.div
                 key={index}
-                className="p-8 rounded-[32px] bg-white border border-black/10 hover:shadow-soft-lg transition-shadow"
+                className="p-8 rounded-[32px] bg-light border border-dark/10 hover:shadow-soft-lg transition-shadow"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05, duration: 0.6 }}
               >
-                <h3 className="font-display font-bold text-xl mb-3">{faq.question}</h3>
-                <p className="text-black/60 leading-relaxed">{faq.answer}</p>
+                <h3 className="font-display font-bold text-xl mb-3 text-dark-deep">{faq.question}</h3>
+                <p className="text-dark/60 leading-relaxed">{faq.answer}</p>
               </motion.div>
             ))}
           </div>
@@ -211,7 +211,7 @@ export default function HowItWorksPage() {
         >
           <motion.a
             href="/"
-            className="inline-flex items-center gap-3 bg-primary text-black font-display font-bold text-lg px-8 py-4 rounded-full hover:scale-105 transition-transform shadow-soft-lg"
+            className="inline-flex items-center gap-3 bg-primary text-dark-deep font-display font-bold text-lg px-8 py-4 rounded-full hover:scale-105 hover:shadow-[0_0_30px_rgba(140,255,46,0.4)] transition-all duration-200 shadow-soft-lg"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

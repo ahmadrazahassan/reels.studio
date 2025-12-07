@@ -80,20 +80,20 @@ export default function FeaturesPage() {
           transition={{ duration: 0.8 }}
         >
           <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/5 border border-black/10 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dark/5 border border-dark/10 mb-8"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
           >
-            <Check className="w-4 h-4" />
-            <span className="text-sm font-display font-semibold text-black/70">All Features</span>
+            <Check className="w-4 h-4 text-dark-deep" />
+            <span className="text-sm font-display font-semibold text-dark/70">All Features</span>
           </motion.div>
 
-          <h1 className="font-display font-light text-6xl sm:text-7xl lg:text-8xl tracking-tighter mb-6">
+          <h1 className="font-display font-light text-6xl sm:text-7xl lg:text-8xl tracking-tighter mb-6 text-dark-deep">
             Powerful <span className="font-extrabold">Features</span>
           </h1>
           
-          <p className="text-xl sm:text-2xl text-black/70 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl sm:text-2xl text-dark/70 max-w-3xl mx-auto leading-relaxed">
             Everything you need to download Instagram Reels effortlessly
           </p>
         </motion.div>
@@ -122,7 +122,7 @@ export default function FeaturesPage() {
         >
           <motion.a
             href="/"
-            className="inline-flex items-center gap-3 bg-primary text-black font-display font-bold text-lg px-8 py-4 rounded-full hover:scale-105 transition-transform shadow-soft-lg"
+            className="inline-flex items-center gap-3 bg-primary text-dark-deep font-display font-bold text-lg px-8 py-4 rounded-full hover:scale-105 hover:shadow-[0_0_30px_rgba(140,255,46,0.4)] transition-all duration-200 shadow-soft-lg"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
