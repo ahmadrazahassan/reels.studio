@@ -142,11 +142,11 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/5 mb-5">
-              <div className="w-1.5 h-1.5 bg-black rounded-full" />
-              <span className="text-[10px] font-display font-bold uppercase tracking-[0.2em] text-black/50">Features</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-dark/5 mb-5">
+              <div className="w-1.5 h-1.5 bg-dark-deep rounded-full" />
+              <span className="text-[10px] font-display font-bold uppercase tracking-[0.2em] text-dark/50">Features</span>
             </div>
-            <h2 className="font-display font-light text-4xl sm:text-5xl lg:text-6xl tracking-tight">
+            <h2 className="font-display font-light text-4xl sm:text-5xl lg:text-6xl tracking-tight text-dark-deep">
               Why Choose <span className="font-extrabold">reels.studio</span>
             </h2>
           </motion.div>
@@ -162,13 +162,13 @@ export default function Home() {
               transition={{ duration: 0.6 }}
             >
               <div>
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-[14px] bg-black/10 mb-6">
-                  <Check className="w-6 h-6 text-black" />
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-[14px] bg-dark-deep/10 mb-6">
+                  <Check className="w-6 h-6 text-dark-deep" />
                 </div>
-                <h3 className="font-display font-bold text-3xl sm:text-4xl mb-3 text-black">{features[1].title}</h3>
-                <p className="text-lg text-black/70 leading-relaxed max-w-md">{features[1].description}</p>
+                <h3 className="font-display font-bold text-3xl sm:text-4xl mb-3 text-dark-deep">{features[1].title}</h3>
+                <p className="text-lg text-dark-deep/70 leading-relaxed max-w-md">{features[1].description}</p>
               </div>
-              <div className="absolute bottom-0 right-0 w-32 h-32 bg-black/5 rounded-tl-[32px]" />
+              <div className="absolute bottom-0 right-0 w-32 h-32 bg-dark-deep/5 rounded-tl-[32px]" />
             </motion.div>
 
             {/* Medium Feature - Instant Processing */}
@@ -180,11 +180,11 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               <div>
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-[14px] bg-cream-50 mb-6">
-                  <Check className="w-6 h-6 text-black" />
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-[14px] bg-light-gray mb-6">
+                  <Check className="w-6 h-6 text-dark-deep" />
                 </div>
-                <h3 className="font-display font-bold text-2xl sm:text-3xl mb-3">{features[0].title}</h3>
-                <p className="text-base text-black/60 leading-relaxed">{features[0].description}</p>
+                <h3 className="font-display font-bold text-2xl sm:text-3xl mb-3 text-dark-deep">{features[0].title}</h3>
+                <p className="text-base text-dark/60 leading-relaxed">{features[0].description}</p>
               </div>
             </motion.div>
 
@@ -196,11 +196,11 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <div className="inline-flex items-center justify-center w-11 h-11 rounded-[12px] bg-white mb-5">
-                <Check className="w-5 h-5 text-black" />
+              <div className="inline-flex items-center justify-center w-11 h-11 rounded-[12px] bg-light mb-5">
+                <Check className="w-5 h-5 text-dark-deep" />
               </div>
-              <h3 className="font-display font-bold text-xl mb-2">{features[2].title}</h3>
-              <p className="text-sm text-black/60 leading-relaxed">{features[2].description}</p>
+              <h3 className="font-display font-bold text-xl mb-2 text-dark-deep">{features[2].title}</h3>
+              <p className="text-sm text-dark/60 leading-relaxed">{features[2].description}</p>
             </motion.div>
 
             {/* Small Feature 2 */}
@@ -211,11 +211,11 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.25 }}
             >
-              <div className="inline-flex items-center justify-center w-11 h-11 rounded-[12px] bg-cream-50 mb-5">
-                <Play className="w-5 h-5 text-black" />
+              <div className="inline-flex items-center justify-center w-11 h-11 rounded-[12px] bg-light-gray mb-5">
+                <Play className="w-5 h-5 text-dark-deep" />
               </div>
-              <h3 className="font-display font-bold text-xl mb-2">{features[3].title}</h3>
-              <p className="text-sm text-black/60 leading-relaxed">{features[3].description}</p>
+              <h3 className="font-display font-bold text-xl mb-2 text-dark-deep">{features[3].title}</h3>
+              <p className="text-sm text-dark/60 leading-relaxed">{features[3].description}</p>
             </motion.div>
 
             {/* Small Feature 3 */}
@@ -226,27 +226,27 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <div className="inline-flex items-center justify-center w-11 h-11 rounded-[12px] bg-white mb-5">
-                <Check className="w-5 h-5 text-black" />
+              <div className="inline-flex items-center justify-center w-11 h-11 rounded-[12px] bg-light mb-5">
+                <Check className="w-5 h-5 text-dark-deep" />
               </div>
-              <h3 className="font-display font-bold text-xl mb-2">{features[4].title}</h3>
-              <p className="text-sm text-black/60 leading-relaxed">{features[4].description}</p>
+              <h3 className="font-display font-bold text-xl mb-2 text-dark-deep">{features[4].title}</h3>
+              <p className="text-sm text-dark/60 leading-relaxed">{features[4].description}</p>
             </motion.div>
 
             {/* Wide Feature - No Registration */}
             <motion.div
-              className="md:col-span-6 lg:col-span-12 relative overflow-hidden rounded-[32px] bg-black text-white p-8 sm:p-10 lg:p-12 min-h-[200px]"
+              className="md:col-span-6 lg:col-span-12 relative overflow-hidden rounded-[32px] bg-dark-deep text-white p-8 sm:p-10 lg:p-12 min-h-[200px]"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.35 }}
             >
               <div className="flex flex-col sm:flex-row items-start gap-6">
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-[16px] bg-primary flex-shrink-0">
-                  <Check className="w-7 h-7 text-black" />
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-[16px] bg-primary flex-shrink-0 shadow-[0_0_20px_rgba(140,255,46,0.3)]">
+                  <Check className="w-7 h-7 text-dark-deep" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-display font-bold text-3xl sm:text-4xl mb-3">{features[5].title}</h3>
+                  <h3 className="font-display font-bold text-3xl sm:text-4xl mb-3 text-white">{features[5].title}</h3>
                   <p className="text-lg text-white/70 leading-relaxed max-w-3xl">{features[5].description}</p>
                 </div>
               </div>
@@ -367,14 +367,14 @@ export default function Home() {
       <section className="py-20 sm:py-32">
         <div className="max-w-5xl mx-auto px-6 sm:px-12 lg:px-16">
           <motion.div
-            className="relative p-12 sm:p-16 rounded-[48px] bg-black text-white overflow-hidden"
+            className="relative p-12 sm:p-16 rounded-[48px] bg-dark-deep text-white overflow-hidden"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
             <div className="relative z-10 text-center">
-              <h2 className="font-display font-light text-4xl sm:text-5xl lg:text-6xl tracking-tight mb-6">
+              <h2 className="font-display font-light text-4xl sm:text-5xl lg:text-6xl tracking-tight mb-6 text-white">
                 Ready to <span className="font-extrabold text-primary">Download?</span>
               </h2>
               <p className="text-xl text-white/70 mb-8 max-w-2xl mx-auto">
@@ -382,7 +382,7 @@ export default function Home() {
               </p>
               <motion.a
                 href="#download"
-                className="inline-flex items-center gap-3 bg-primary text-black font-display font-bold text-lg px-8 py-4 rounded-full hover:scale-105 transition-transform shadow-soft-lg"
+                className="inline-flex items-center gap-3 bg-primary text-dark-deep font-display font-bold text-lg px-8 py-4 rounded-full hover:scale-105 hover:shadow-[0_0_30px_rgba(140,255,46,0.4)] transition-all duration-200 shadow-soft-lg"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
