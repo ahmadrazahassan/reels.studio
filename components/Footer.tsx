@@ -18,7 +18,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <h2 className="font-display font-light text-5xl sm:text-6xl lg:text-7xl xl:text-8xl tracking-tight mb-6 max-w-5xl">
+            <h2 className="font-display font-light text-5xl sm:text-6xl lg:text-7xl xl:text-8xl tracking-tight mb-6 max-w-5xl text-white">
               Download Reels.
               <br />
               <span className="font-extrabold">No Limits.</span>
